@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Info Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🚗 Car Info Management System</h1>
+
+    <form method="POST">
+      <input type="text" name="car_number" placeholder="Car Number" required>
+      <input type="text" name="owner_name" placeholder="Owner Name" required>
+      <input type="number" name="model_year" placeholder="Model Year" required>
+      <input type="number" name="service_km" placeholder="Service KM" required>
+      <button type="submit">Add Car</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Car Number</th>
+          <th>Owner Name</th>
+          <th>Model Year</th>
+          <th>Service KM</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for car in cars %}
+        <tr>
+          <td>{{ car.id }}</td>
+          <td>{{ car.car_number }}</td>
+          <td>{{ car.owner_name }}</td>
+          <td>{{ car.model_year }}</td>
+          <td>{{ car.service_km }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
