@@ -44,21 +44,21 @@ source venv/bin/activate    # On Windows: venv\Scripts\activate
 
 **Install dependencies**
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 
 **Set up PostgreSQL**
 
-Create a database named carinfo_db
+- Create a database named carinfo_db
 
-Update your connection URL in config.py or .env:
+- Update your connection URL in config.py or .env:
 
-DATABASE_URL=postgresql://username:password@localhost/carinfo_db
+- DATABASE_URL=postgresql://username:password@localhost/carinfo_db
 
 
 **Run the FastAPI app**
 
-uvicorn main:app --reload
+- uvicorn main:app --reload
 
 
 ### Access
